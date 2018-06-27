@@ -1,0 +1,25 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password:
+  timeout: 5000
+
+development:
+  <<: *default
+  # database: planes_development
+
+framgia_staging:
+  <<: *default
+  username: planes
+  database: planes_staging
+
+production:
+  <<: *default
+  username: root
+  database: planes_production
+
+test:
+  <<: *default
+  database: planes_test
